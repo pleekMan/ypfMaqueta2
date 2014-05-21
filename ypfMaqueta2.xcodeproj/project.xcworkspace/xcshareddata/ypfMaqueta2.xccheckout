@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>794C6904-B478-420F-A4A9-2E9749FE19DE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ypfMaqueta2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2DAC15F7-D787-4C89-B31C-B157B54D41CD</key>
+		<string>https://github.com/PleekMan/ypfMaqueta2</string>
+		<key>E05A6B72-3626-40A2-AF1D-7BC8B2DB05DD</key>
+		<string>https://github.com/Akira-Hayasaka/ofxPSBlend.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ypfMaqueta2.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2DAC15F7-D787-4C89-B31C-B157B54D41CD</key>
+		<string>../..</string>
+		<key>E05A6B72-3626-40A2-AF1D-7BC8B2DB05DD</key>
+		<string>../../../../../addons/ofxPSBlend</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/PleekMan/ypfMaqueta2</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2DAC15F7-D787-4C89-B31C-B157B54D41CD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E05A6B72-3626-40A2-AF1D-7BC8B2DB05DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxPSBlend</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2DAC15F7-D787-4C89-B31C-B157B54D41CD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ypfMaqueta2</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "TriangleMesh.h"
 
 class ofApp : public ofBaseApp{
 
@@ -28,13 +29,7 @@ class ofApp : public ofBaseApp{
     
     ofShader maskShader;
     
-    // NOISE
-    
-    float increment = 0.01;
-    float zoff = 0.0;     // The noise function's 3rd argument, a global variable that increments once per cycle
-    float zincrement = 0.01;     // We will increment zoff differently than xoff and yoff
-    
-    
+    TriangleMesh water;
     
 		
 };
