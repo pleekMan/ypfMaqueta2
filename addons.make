@@ -1,0 +1,13 @@
+ofxKinect
+ofxOsc
+ofxXmlSettings
+ofxLeapMotion
+ofxMSACore
+ofxMSAFluid
+ofxMSAInteractiveObject
+ofxMSAPerlin
+ofxSimpleGuiToo
+ofxSyphon
+ofxOpenCv
+ofxFX
+ofxPSBlend
