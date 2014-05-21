@@ -24,6 +24,9 @@
 		495E773E470FF7C742646E77 /* ofxSimpleGuiContent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD862AFB8EFF69D2B30A7293 /* ofxSimpleGuiContent.cpp */; };
 		49890708C36FA822FC58A60B /* ofxSimpleGuiFPSCounter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C4855735366AEC807A7CF36 /* ofxSimpleGuiFPSCounter.cpp */; };
 		49BEEB2DFA5319D55AA6899F /* tilt.c in Sources */ = {isa = PBXBuildFile; fileRef = BF2F2AA872288D30F53983EF /* tilt.c */; };
+		4A0AB119192D205B002F9690 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A0AB115192D205B002F9690 /* Particle.cpp */; };
+		4A0AB11A192D205B002F9690 /* ParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A0AB117192D205B002F9690 /* ParticleSystem.cpp */; };
+		4A0AB11D192D2289002F9690 /* WaterManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A0AB11B192D2289002F9690 /* WaterManager.cpp */; };
 		4A0D09B1C8162D63677F1582 /* ofxMSAPerlin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19DD2CD219DC8F7C4AA82D4E /* ofxMSAPerlin.cpp */; };
 		4A7DC173192D026C00B478C3 /* TriangleMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A7DC171192D026C00B478C3 /* TriangleMesh.cpp */; };
 		4ADB88E2FB52E76A471065DE /* ofxOscParameterSync.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0AED834CE4DEC5260AF302A2 /* ofxOscParameterSync.cpp */; };
@@ -184,6 +187,12 @@
 		4945618E448568E991F2EC95 /* ofxBlend.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxBlend.h; path = ../../../addons/ofxFX/src/composers/ofxBlend.h; sourceTree = SOURCE_ROOT; };
 		4976D4D0EB5D35AAE81DE51A /* ofxFlow.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxFlow.h; path = ../../../addons/ofxFX/src/operations/ofxFlow.h; sourceTree = SOURCE_ROOT; };
 		49EFFCF36CF194CCE0E1FAAB /* kdtree_index.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = kdtree_index.h; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann/kdtree_index.h; sourceTree = SOURCE_ROOT; };
+		4A0AB115192D205B002F9690 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = Fluids/Particle.cpp; sourceTree = "<group>"; };
+		4A0AB116192D205B002F9690 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = Fluids/Particle.h; sourceTree = "<group>"; };
+		4A0AB117192D205B002F9690 /* ParticleSystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleSystem.cpp; path = Fluids/ParticleSystem.cpp; sourceTree = "<group>"; };
+		4A0AB118192D205B002F9690 /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleSystem.h; path = Fluids/ParticleSystem.h; sourceTree = "<group>"; };
+		4A0AB11B192D2289002F9690 /* WaterManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WaterManager.cpp; sourceTree = "<group>"; };
+		4A0AB11C192D2289002F9690 /* WaterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterManager.h; sourceTree = "<group>"; };
 		4A2C7833E609686E9ECD8A8C /* ofxMSAInteractiveObject.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxMSAInteractiveObject.h; path = ../../../addons/ofxMSAInteractiveObject/src/ofxMSAInteractiveObject.h; sourceTree = SOURCE_ROOT; };
 		4A7DC171192D026C00B478C3 /* TriangleMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TriangleMesh.cpp; sourceTree = "<group>"; };
 		4A7DC172192D026C00B478C3 /* TriangleMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangleMesh.h; sourceTree = "<group>"; };
@@ -751,6 +760,17 @@
 			name = operations;
 			sourceTree = "<group>";
 		};
+		4A0AB114192D2005002F9690 /* Fluids */ = {
+			isa = PBXGroup;
+			children = (
+				4A0AB115192D205B002F9690 /* Particle.cpp */,
+				4A0AB116192D205B002F9690 /* Particle.h */,
+				4A0AB117192D205B002F9690 /* ParticleSystem.cpp */,
+				4A0AB118192D205B002F9690 /* ParticleSystem.h */,
+			);
+			name = Fluids;
+			sourceTree = "<group>";
+		};
 		5236346776DB8ECC4B121CA3 /* gpu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1135,11 +1155,14 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4A0AB114192D2005002F9690 /* Fluids */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
 				4A7DC171192D026C00B478C3 /* TriangleMesh.cpp */,
 				4A7DC172192D026C00B478C3 /* TriangleMesh.h */,
+				4A0AB11B192D2289002F9690 /* WaterManager.cpp */,
+				4A0AB11C192D2289002F9690 /* WaterManager.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1344,6 +1367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
+				4A0AB11D192D2289002F9690 /* WaterManager.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				7ADB04AF67C568EAFAEBA546 /* ofxKinectExtras.cpp in Sources */,
 				686B0DF6249B52E1A85B39EC /* ofxKinect.cpp in Sources */,
@@ -1368,12 +1392,14 @@
 				A29D8C96AE042ECEAA1BD4F3 /* NetworkingUtilsWin.cpp in Sources */,
 				28090DEB5109115003E8F1C5 /* UdpSocketWin.cpp in Sources */,
 				62545D179C94265CA1389D4A /* OscOutboundPacketStream.cpp in Sources */,
+				4A0AB119192D205B002F9690 /* Particle.cpp in Sources */,
 				C4782ECC372420ACE0615B74 /* OscPrintReceivedElements.cpp in Sources */,
 				0546D1A38E13BD319CC9755B /* OscReceivedElements.cpp in Sources */,
 				879A251454401BC0B6E4F238 /* OscTypes.cpp in Sources */,
 				63B57AC5BF4EF088491E0317 /* ofxXmlSettings.cpp in Sources */,
 				933A2227713C720CEFF80FD9 /* tinyxml.cpp in Sources */,
 				9D44DC88EF9E7991B4A09951 /* tinyxmlerror.cpp in Sources */,
+				4A0AB11A192D205B002F9690 /* ParticleSystem.cpp in Sources */,
 				5A4349E9754D6FA14C0F2A3A /* tinyxmlparser.cpp in Sources */,
 				A854A26C873CB7CB18844F73 /* MSACoreGL.cpp in Sources */,
 				825FA11382B216421AC896A6 /* MSAFluidDrawerBase.cpp in Sources */,

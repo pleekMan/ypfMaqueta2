@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "TriangleMesh.h"
+#include "WaterManager.h"
 
 class ofApp : public ofBaseApp{
 
@@ -29,7 +29,9 @@ class ofApp : public ofBaseApp{
     
     ofShader maskShader;
     
-    TriangleMesh water;
+    WaterManager waterManager;
+    
+    INTEGRANDO EL FLUID: USAR EL FLUID PASADO A TRIANGLE PARA MOVER EL MESHX
     
 		
 };

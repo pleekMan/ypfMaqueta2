@@ -9,8 +9,7 @@ void ofApp::setup(){
     mainLayer.allocate(canvasWidth, canvasHeight);
     maskLayer.allocate(canvasWidth, canvasHeight);
     
-    //water.setup((int)(canvasWidth * 0.8) , (int)(canvasHeight * 0.8), 20);
-    water.setup(canvasWidth,canvasHeight, 20);
+    waterManager.setup();
 
     ofDisableLighting();
     
@@ -21,10 +20,9 @@ void ofApp::update(){
     
     mainLayer.begin();
     
-    water.update();
-    water.render();
-    
-    
+    waterManager.update();
+    waterManager.render();
+        
     mainLayer.end();
     
 

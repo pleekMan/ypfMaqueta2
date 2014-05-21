@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include "ofMain.h"
+#include <MSAFluid.h>
 
 class TriangleMesh {
     
@@ -20,6 +21,7 @@ public:
     //~TriangleMesh(){};
     
     void setup(int width, int height, int rowColumnCount);
+    void setFluidSolver(msa::fluid::Solver *fluidSolver);
     void update();
     void render();
     

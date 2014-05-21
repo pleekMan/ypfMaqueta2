@@ -8,7 +8,7 @@
 
 #include "TriangleMesh.h"
 
-void TriangleMesh::setup(int width, int height, int rowColumnCount){
+void TriangleMesh::setup(int _width, int _height, int rowColumnCount){
     
     complexity = 8; // NOISE SCALE
     timeSpeed = .005; // MOTION SPEED
@@ -37,10 +37,12 @@ void TriangleMesh::setup(int width, int height, int rowColumnCount){
     
     // CREATE ORIGINAL POINT PLACEMENT
     
-    zMultiplier = 70;
-    
-    
     //ofEnableLighting();
+
+    width = _width;
+    height = _height;
+    
+    zMultiplier = 70;
     
     vertexRowCount = rowColumnCount;
     int gridWidth = width;
@@ -100,6 +102,13 @@ void TriangleMesh::setup(int width, int height, int rowColumnCount){
     //light.enable();
     
     
+    
+}
+
+void TriangleMesh::setFluidSolver(msa::fluid::Solver *fluidSolver){
+    msa::fluid::Solver solver = *fluidSolver;
+    
+    solver.setSize(width, height);
     
 }
 
