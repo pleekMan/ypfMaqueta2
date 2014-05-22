@@ -21,12 +21,14 @@ public:
     //~TriangleMesh(){};
     
     void setup(int width, int height, int rowColumnCount);
-    void setFluidSolver(msa::fluid::Solver *fluidSolver);
     void update();
-    void render();
+    void render(const msa::fluid::Solver &fSolver, ofVec2f windowSize, ofVec2f invWindowSize);
     
     void setDimensions(int width, int height);
     void setGrid(int rowColumnCount);
+    
+    void setFluidSolver(const msa::fluid::Solver &fSolver);
+    //void addForceToFluid();
     
     
 private:
@@ -45,6 +47,8 @@ private:
     ofVec2f getField(ofVec2f position);
     void moveVerticesFromPoint(int pointIndex, float zMove, float multiplier, int gridWidth);
     float getTriangleAverage(int pointIndex, int whichTriangleInTheQuad); // THE QUAD IS MADE OUT OF 2 TRIANGLES
+    
+    const msa::fluid::Solver *fluidSolver;
     
     vector<ofVec2f> points;
     ofMesh cloud;

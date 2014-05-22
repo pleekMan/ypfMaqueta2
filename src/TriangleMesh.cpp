@@ -8,11 +8,14 @@
 
 #include "TriangleMesh.h"
 
+static const float MOMENTUM = 0.1f;
+static const float FLUID_FORCE = 0.3f;
+
 void TriangleMesh::setup(int _width, int _height, int rowColumnCount){
     
     complexity = 8; // NOISE SCALE
     timeSpeed = .005; // MOTION SPEED
-
+    
     nPoints = 4096; // points to draw
     //pollenMass = .8; // pollen mass
     phase = TWO_PI; // separate u-noise from v-noise
@@ -38,7 +41,7 @@ void TriangleMesh::setup(int _width, int _height, int rowColumnCount){
     // CREATE ORIGINAL POINT PLACEMENT
     
     //ofEnableLighting();
-
+    
     width = _width;
     height = _height;
     
@@ -105,10 +108,11 @@ void TriangleMesh::setup(int _width, int _height, int rowColumnCount){
     
 }
 
-void TriangleMesh::setFluidSolver(msa::fluid::Solver *fluidSolver){
-    msa::fluid::Solver solver = *fluidSolver;
-    
-    solver.setSize(width, height);
+void TriangleMesh::setFluidSolver(const msa::fluid::Solver &fSolver){
+    //fluidSolver = *fluidSolver;
+    fluidSolver = &fSolver;
+    //fluidSolver->setup(width, height);
+    //ofVec2f vel = fluidSolver->getVelocityAtPos(ofVec2f(0,0));
     
 }
 
@@ -153,7 +157,7 @@ void TriangleMesh::update(){
     
     // CALCULATE VERTEX POSITION AND COLOR
     
-     for (int y=0; y < vertexRowCount - 1; y++) {
+    for (int y=0; y < vertexRowCount - 1; y++) {
         for (int x=0; x < vertexRowCount; x++) {
             
             int actualPoint = x + (y * vertexRowCount);
@@ -162,7 +166,7 @@ void TriangleMesh::update(){
             // GET NOISE AT POINT (  USING THE ORIGINAL waterPoins[] OR THE ACTUAL VERTEX AT water.getVertex(point * 6)  )
             //float upVector = getField(ofVec2f(waterPoints[actualPoint].x, waterPoints[actualPoint].y)).length();
             float upVector = getField(ofVec2f(water.getVertex(actualPoint * 6).x,water.getVertex(actualPoint * 6).y)).length();
-
+            
             //FROM THE actualPoint MOVE AL TRIANGLES THAT SHARE VERTEX AT SAME POSITION
             moveVerticesFromPoint(actualPoint, upVector, zMultiplier, vertexRowCount);
             
@@ -197,7 +201,7 @@ void TriangleMesh::update(){
     
 }
 
-void TriangleMesh::render(){
+void TriangleMesh::render(const msa::fluid::Solver &fSolver, ofVec2f windowSize, ofVec2f invWindowSize){
     
     ofBackground(255,255,255,10);
     
@@ -206,25 +210,34 @@ void TriangleMesh::render(){
     //ofRotateX(90);
     
     ofSetColor(ofColor::blue);
-    water.draw();
+    //water.draw();
     
     ofSetColor(ofColor::white);
-    //water.drawWireframe();
+    water.drawWireframe();
     
     ofPopMatrix();
-
+    
     
     // DRAW CIRCLES
-    /*
-     ofSetColor(255, 0, 0);
-     ofNoFill();
-     for (int i=0; i<waterPoints.size(); i++) {
-     
-     float radius = getField(ofVec2f(waterPoints[i].x, waterPoints[i].y)).length();
-     
-     ofCircle(waterPoints[i].x, waterPoints[i].y, radius * 10);
-     }
-     */
+    
+    ofSetColor(255, 0, 0);
+    ofNoFill();
+    for (int i=0; i<waterPoints.size(); i+=4) {
+        
+        //float radius = getField(ofVec2f(waterPoints[i].x, waterPoints[i].y)).length();
+        ofVec2f pos = ofVec2f(waterPoints[i].x, waterPoints[i].y);
+        
+        //float radius = fSolver.getVelocityAtPos(pos).length();
+        
+        ofVec2f vel (fSolver.getVelocityAtPos( pos * invWindowSize ) * windowSize * MOMENTUM);
+        float radius = vel.length();
+        
+        ofCircle(waterPoints[i].x, waterPoints[i].y, radius * 10000);
+        ofDrawBitmapString(ofToString(radius), pos);
+        
+        
+    }
+    
     
     // ----------------
     

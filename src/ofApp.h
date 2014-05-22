@@ -31,7 +31,7 @@ class ofApp : public ofBaseApp{
     
     WaterManager waterManager;
     
-    INTEGRANDO EL FLUID: USAR EL FLUID PASADO A TRIANGLE PARA MOVER EL MESHX
+    //INTEGRANDO EL FLUID: USAR EL FLUID PASADO A TRIANGLE PARA MOVER EL MESH
     
 		
 };

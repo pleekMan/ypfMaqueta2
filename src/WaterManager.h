@@ -25,9 +25,16 @@ public:
     void setup();
     void update();
     void render();
+    
+    void onMouseReleased(int x, int y, int button);
+    void addToFluid(ofVec2f pos, ofVec2f vel, bool addColor, bool addForce);
+
 
     msa::fluid::Solver      fluidSolver;
 	//msa::fluid::DrawerGl	fluidDrawer;
+    
+    ofVec2f pMouse;
+    float velocityMult;
     
     TriangleMesh water;
 };

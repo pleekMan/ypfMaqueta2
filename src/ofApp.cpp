@@ -30,6 +30,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofSetWindowTitle(ofToString(ofGetFrameRate()));
     ofBackgroundGradient(ofColor(0,0,0), ofColor(40,40,200), OF_GRADIENT_LINEAR);
     ofSetColor(255);
     mainLayer.draw(ofPoint(0,0));
@@ -69,6 +70,7 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
+    waterManager.onMouseReleased(x, y, button);
 
 }
 
